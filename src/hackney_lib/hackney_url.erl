@@ -80,7 +80,8 @@ normalize(#hackney_url{}=Url) ->
                     urldecode(unicode:characters_to_binary(Host0))),
 
             %% encode domain if needed
-            Host2 = idna:to_ascii(Host1),
+            %% Host2 = idna:to_ascii(Host1),
+                             Host2 = Host1,
             Netloc1 = case {Scheme, Port} of
                 {http, 80} -> list_to_binary(Host2);
                 {https, 443} -> list_to_binary(Host2);

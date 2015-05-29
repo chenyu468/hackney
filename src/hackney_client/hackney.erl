@@ -51,9 +51,9 @@
 
 %% @doc Start the hackney process. Useful when testing using the shell.
 start() ->
-    hackney_deps:ensure(),
+    %% hackney_deps:ensure(),
     application:load(hackney),
-    hackney_app:ensure_deps_started(),
+    %% hackney_app:ensure_deps_started(),
     application:start(hackney).
 
 start(PoolHandler) ->

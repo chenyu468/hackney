@@ -37,7 +37,7 @@ start_link() ->
 %% ===================================================================
 
 init([]) ->
-
+    io:format("_40~n"),
     Manager = ?CHILD(hackney_manager, worker),
 
     {ok, { {one_for_one, 10, 1}, [Manager]}}.

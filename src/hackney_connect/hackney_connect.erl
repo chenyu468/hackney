@@ -38,7 +38,8 @@ connect(Transport, Host, Port, Options, Dynamic) ->
                               {host, Host},
                               {port, Port},
                               {dynamic, Dynamic}]),
-    case create_connection(Transport, hackney_idna:to_ascii(Host), Port,
+    %% case create_connection(Transport, hackney_idna:to_ascii(Host), Port,
+    case create_connection(Transport, Host, Port,
                            Options, Dynamic) of
         {ok, #client{request_ref=Ref}} ->
             {ok, Ref};

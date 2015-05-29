@@ -131,6 +131,7 @@ boundary() ->
 %% @doc create a generic multipart header
 mp_header(Headers, Boundary) ->
     BinHeaders = hackney_headers:to_binary(Headers),
+    io:format("_134:~p,~p~n",[Boundary,BinHeaders]),
     <<"--", Boundary/binary, "\r\n", BinHeaders/binary >>.
 
 %% @doc return the boundary ennding a multipart
